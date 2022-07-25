@@ -1,1 +1,1 @@
-# lotide
+# Building a simple library.
