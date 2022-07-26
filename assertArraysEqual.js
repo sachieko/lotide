@@ -1,8 +1,9 @@
-// Debugging with console.assert function
-const assertEqual = (actual, expected) => {
-  console.assert(expected === actual, `🔥🔥🔥 ${actual} !== ${expected}`);
-  if (actual === expected) {
-    
+
+//assert whether two arrays are equal and log a message to console depending on result
+const assertArraysEqual = (actual, expected) => {
+  let bool = eqArrays(actual, expected) === true;
+  console.assert(bool === true, `🔥🔥🔥 ${actual} !== ${expected}`);
+  if (bool) {
     console.log(`Assertion Passed: ✔️✔️✔️ ${actual} === ${expected}`);
   }
 };
@@ -25,11 +26,7 @@ const eqArrays = (arrActual, arrExpected) => {
   return bool;
 };
 
-eqArrays([1, 2, 3], [1, 2, 3]); // => true
-eqArrays([1, 2, 3], [3, 2, 1]); // => false
-eqArrays(["1", "2", "3"], ["1", "2", "3"]); // => true
-eqArrays(["1", "2", "3"], ["1", "2", 3]); // => false
-assertEqual(eqArrays([1, 2, 3], [1, 2, 3]), true);
-assertEqual(eqArrays([1, 2, 3], [3, 2, 1]), false);
-assertEqual(eqArrays(["1", "2", "3"], ["1", "2", "3"]), true);
-assertEqual(eqArrays(["1", "2", "3"], ["1", "2", 3]), false);
+assertArraysEqual([1, 2, 3], [1, 2, 3]); // => pass
+assertArraysEqual([1, 2, 3], [3, 2, 1]); // => fail
+assertArraysEqual(["1", "2", "3"], ["1", "2", "3"]); // => pass
+assertArraysEqual(["1", "2", "3"], ["1", "2", 3]); // => fail
