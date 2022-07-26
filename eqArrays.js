@@ -8,17 +8,21 @@ const assertEqual = (actual, expected) => {
 };
 
 const eqArrays = (arrActual, arrExpected) => {
+  let bool = false;
   if (arrActual.length !== arrExpected.length) {
-    console.log(`🔥🔥🔥 Array Length Mismatch! 🔥🔥🔥`);
-    process.exit();
+    return bool;
   }
   for (let i = 0; i < arrActual.length; i++) {
-    assertEqual(arrActual[i], arrExpected[i]);
+    if (arrActual[i] !== arrExpected[i]) {
+      bool = false;
+      return bool;
+    }
   } 
+  bool = true;
+  return bool;
 }
 
 eqArrays([1, 2, 3], [1, 2, 3]) // => true
 eqArrays([1, 2, 3], [3, 2, 1]) // => false
-
 eqArrays(["1", "2", "3"], ["1", "2", "3"]) // => true
 eqArrays(["1", "2", "3"], ["1", "2", 3]) // => false
