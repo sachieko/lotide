@@ -10,8 +10,8 @@ const assertEqual = function(actual, expected) {
   }
 };
 
-const test = [1,2,3,4,5,6];
+const test = [];
 console.log(test.length);
 console.log(tail(test));
 console.log(test);
-assertEqual(test.length, 6);
+assertEqual(test.length, 1);
