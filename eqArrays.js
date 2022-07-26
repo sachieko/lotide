@@ -1,3 +1,11 @@
+// Debugging with console.assert function
+const assertEqual = function(actual, expected) {
+  console.assert(expected === actual, `🔥🔥🔥 ${actual} !== ${expected}`);
+  if (actual === expected) {
+    
+    console.log(`Assertion Passed: ✔️✔️✔️ ${actual} === ${expected}`);
+  }
+};
 // This cannot check nested arrays or objects.
 const eqArrays = (arrActual, arrExpected) => {
   //If lengths are different they're not the same array.
@@ -21,3 +29,7 @@ eqArrays([1, 2, 3], [1, 2, 3]); // => true
 eqArrays([1, 2, 3], [3, 2, 1]); // => false
 eqArrays(["1", "2", "3"], ["1", "2", "3"]); // => true
 eqArrays(["1", "2", "3"], ["1", "2", 3]); // => false
+assertEqual(eqArrays([1, 2, 3], [1, 2, 3]), true);
+assertEqual(eqArrays([1, 2, 3], [3, 2, 1]), false);
+assertEqual(eqArrays(["1", "2", "3"], ["1", "2", "3"]), true);
+assertEqual(eqArrays(["1", "2", "3"], ["1", "2", 3]), false);
