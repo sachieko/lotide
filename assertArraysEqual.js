@@ -1,12 +1,11 @@
-
 //assert whether two arrays are equal and log a message to console depending on result
 const assertArraysEqual = (actual, expected) => {
   let bool = eqArrays(actual, expected) === true;
   console.assert(bool === true, `🔥🔥🔥 ${actual} !== ${expected}`);
   if (bool) {
-    console.log(`Assertion Passed: ✔️✔️✔️ ${actual} === ${expected}`)
+    console.log(`Assertion Passed: ✔️✔️✔️ ${actual} === ${expected}`);
   }
-}
+};
 // This cannot check nested arrays or objects.
 const eqArrays = (arrActual, arrExpected) => {
   //If lengths are different they're not the same array.
