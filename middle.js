@@ -17,7 +17,7 @@ const eqArrays = (arrActual, arrExpected) => {
   //If any types or values are different they're different arrays.
   for (let i = 0; i < arrActual.length; i++) {
     if (arrActual[i] !== arrExpected[i]) {
-      bool = false;
+      bool = false; 
       return bool;
     }
   }
