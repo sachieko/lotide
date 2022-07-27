@@ -9,9 +9,9 @@ const assertEqual = (actual, expected) => {
 
 // Given an array and an object which lists which values to count as {value: true/false} pairs, returns {value: count}
 // So our function will need to take an array and object as parameters.
-const countOnly = (array, itemsToCount) => {
-  returnObj = {};
-// Create an object with keys for only those we would like to count. Takes in an array and object, returns object with keys only if key: true.
+const countOnly = function(array, itemsToCount) {
+  const returnObj = {};
+  // Create an object with keys for only those we would like to count. Takes in an array and object, returns object with keys only if key: true.
   for (let value in itemsToCount) {
     if (itemsToCount.hasOwnProperty(value)) {
       let sum = countValues(array, value);
@@ -22,13 +22,13 @@ const countOnly = (array, itemsToCount) => {
 };
 // Helper functions for countOnly
 // Sets a key of object[value] to sum only if the sum is not 0.
-const setKeyToSum = (inputObject, outputObject, value, sum) => {
+const setKeyToSum = function(inputObject, outputObject, value, sum) {
   if (sum > 0 && inputObject[value] === true) {
     outputObject[value] = sum;
   }
 };
 // This function takes in an array and counts how many elements in the array match the given key.
-const countValues = (array, key) => {
+const countValues = function(array, key) {
   let count = 0;
   for (const value of array) {
     if (key === value) {

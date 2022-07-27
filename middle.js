@@ -17,7 +17,7 @@ const eqArrays = (arrActual, arrExpected) => {
   //If any types or values are different they're different arrays.
   for (let i = 0; i < arrActual.length; i++) {
     if (arrActual[i] !== arrExpected[i]) {
-      bool = false; 
+      bool = false;
       return bool;
     }
   }
@@ -31,16 +31,16 @@ const middle = array => {
 // Arrays with one or two elements should return an empty array
   if (array.length <= 2) {
     return [];
-  } 
-  let halfIndex = array.length / 2
-  let isEven = array.length % 2 === 0
-// Arrays with an odd number of elements should return an array of the single middle element
+  }
+  let halfIndex = array.length / 2;
+  let isEven = array.length % 2 === 0;
+  // Arrays with an odd number of elements should return an array of the single middle element
   if (!isEven) {
     return [array[Math.floor(halfIndex)]];
   }
-// Arrays with even should return two middle elements.
+  // Arrays with even should return two middle elements.
   if (isEven) {
-    return [array[halfIndex - 1], array[halfIndex]]
+    return [array[halfIndex - 1], array[halfIndex]];
   }
 };
 
