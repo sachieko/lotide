@@ -1,10 +1,10 @@
-//Debugging functions
+//Debugging array functions
 //assert whether two arrays are equal and log a message to console depending on result
 const assertArraysEqual = (actual, expected) => {
   let bool = eqArrays(actual, expected) === true;
-  console.assert(bool === true, `🔥🔥🔥 ${actual} !== ${expected}`);
+  console.assert(bool === true, `🔥🔥🔥 [${actual}] !== [${expected}]`);
   if (bool) {
-    console.log(`Assertion Passed: ✔️✔️✔️ ${actual} === ${expected}`);
+    console.log(`Assertion Passed: ✔️✔️✔️ [${actual}] === [${expected}]`);
   }
 };
 // This cannot check nested arrays or objects, returns boolean of whether 2 arrays are equal.
@@ -32,13 +32,15 @@ const middle = array => {
   if (array.length <= 2) {
     return [];
   } 
+  let halfIndex = array.length / 2
+  let isEven = array.length % 2 === 0
 // Arrays with an odd number of elements should return an array of the single middle element
-  if (array.length % 2 !== 0) {
-    return [array[Math.floor(array.length / 2)]];
+  if (!isEven) {
+    return [array[Math.floor(halfIndex)]];
   }
 // Arrays with even should return two middle elements.
-  if (array.length % 2 === 0) {
-    return [array[array.length / 2 - 1], array[array.length / 2]]
+  if (isEven) {
+    return [array[halfIndex - 1], array[halfIndex]]
   }
 };
 
