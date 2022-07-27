@@ -1,6 +1,6 @@
 //Debugging array functions
 //assert whether two arrays are equal and log a message to console depending on result
-const assertArraysEqual = (actual, expected) => {
+const assertArraysEqual = function(actual, expected) {
   let bool = eqArrays(actual, expected) === true;
   console.assert(bool === true, `🔥🔥🔥 [${actual}] !== [${expected}]`);
   if (bool) {
@@ -8,7 +8,7 @@ const assertArraysEqual = (actual, expected) => {
   }
 };
 // This cannot check nested arrays or objects, returns boolean of whether 2 arrays are equal.
-const eqArrays = (arrActual, arrExpected) => {
+const eqArrays = function(arrActual, arrExpected) {
   //If lengths are different they're not the same array.
   let bool = false;
   if (arrActual.length !== arrExpected.length) {
@@ -27,7 +27,7 @@ const eqArrays = (arrActual, arrExpected) => {
 };
 
 // ACTUAL FUNCTION here ugh. It takes in an array, and it MUST be an array haha, and then outputs the middle element(s) of the array. Does not mutate.
-const middle = array => {
+const middle = function(array) {
 // Arrays with one or two elements should return an empty array
   if (array.length <= 2) {
     return [];

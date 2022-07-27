@@ -10,6 +10,6 @@ const head = function(arr) {
   return arr[0];
 };
 
-assertEqual(head([5]), 5);
-assertEqual(head([]), undefined);
-assertEqual(head([4,3,2]), 3);
+assertEqual(head([5]), 5); // => pass
+assertEqual(head([]), undefined); // => pass
+assertEqual(head([4,3,2]), 3); // => fail

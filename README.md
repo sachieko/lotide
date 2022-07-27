@@ -1,1 +1,1 @@
-# Building a simple library.
+# Building a simple library - a simplified Lodash
