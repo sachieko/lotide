@@ -1,3 +1,4 @@
+//Debugging array functions
 //assert whether two arrays are equal and log a message to console depending on result
 const assertArraysEqual = (actual, expected) => {
   let bool = eqArrays(actual, expected) === true;
