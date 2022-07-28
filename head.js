@@ -1,8 +1,9 @@
 // Debugging with console.assert function
 const assertEqual = function(actual, expected) {
-  console.assert(expected === actual, `🔥🔥🔥 ${actual} !== ${expected}`);
+  console.assert(expected === actual, `🔥🔥🔥 ${actual} !== ${expected} 🔥`);
   if (actual === expected) {
-    console.log(`Assertion Passed: ✔️✔️✔️ ${actual} === ${expected}`);
+    
+    console.log(`Assertion Passed: ✔️✔️✔️ ${actual} === ${expected} ✔️`);
   }
 };
 
