@@ -37,7 +37,7 @@ const eqObjects = function(object1, object2) {
     // We need some booleans so we don't compare an array or object as if they're primitives!
     let arrayBool = Array.isArray(object2[key]);
     let objBool = typeof object2[key] === "object" && typeof object1[key] === "object";
-    // If value for key is an array, Array.isArray() will flag it first. If typeof value returns object after this, it must be an object since it wasn't an array.
+    // If value for key is an array, Array.isArray() will flag it first. If typeof value returns object after this, it will be an object since it wasn't an array.
     // If it's an array it will be compared here and if any arrays aren't equal it will return the false bool.
     if (arrayBool) {
       if (!eqArrays(object1[key], object2[key])) {
