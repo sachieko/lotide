@@ -11,6 +11,9 @@ const assertArraysEqual = function(actual, expected) {
 const eqArrays = function(arrActual, arrExpected) {
   //If lengths are different they're not the same array.
   let bool = false;
+  if (!Array.isArray(arrActual) || !Array.isArray(arrExpected)) {
+    return bool;
+  }
   if (arrActual.length !== arrExpected.length) {
     return bool;
   }

@@ -13,13 +13,13 @@ const countLetters = function(string) {
   for (let letter of string) {
     // allows you to count only letters not spaces.
     if (letter !== " ") {
-      resultObj[letter] ? resultObj[letter] += 1 : resultObj[letter] = 1; 
+      resultObj[letter] ? resultObj[letter] += 1 : resultObj[letter] = 1;
     }
   }
   return resultObj;
 };
 
-let test1 = countLetters("l l l 4 4 2 1")
+let test1 = countLetters("l l l 4 4 2 1");
 console.log(test1);
 assertEqual(test1['l'], 3);
 assertEqual(test1['4'], 2);

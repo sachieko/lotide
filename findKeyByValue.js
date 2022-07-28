@@ -12,6 +12,9 @@ const assertEqual = function(actual, expected) {
 const eqArrays = function(arrActual, arrExpected) {
   //If lengths are different they're not the same array.
   let bool = false;
+  if (!Array.isArray(arrActual) || !Array.isArray(arrExpected)) {
+    return bool;
+  }
   if (arrActual.length !== arrExpected.length) {
     return bool;
   }
@@ -40,7 +43,7 @@ const findKeyByValue = function(object, value) {
 };
 
 // TEST CASES ---
-const bestTVShowsByGenre = { 
+const bestTVShowsByGenre = {
   sci_fi: "The Expanse",
   comedy: "Brooklyn Nine-Nine",
   drama:  "The Wire"

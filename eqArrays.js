@@ -6,10 +6,13 @@ const assertEqual = (actual, expected) => {
     console.log(`Assertion Passed: ✔️✔️✔️ ${actual} === ${expected}`);
   }
 };
-// This cannot check nested arrays or objects.
-const eqArrays = (arrActual, arrExpected) => {
-  //If lengths are different they're not the same array.
+// This cannot check nested arrays or objects, returns boolean of whether 2 arrays are equal.
+const eqArrays = function(arrActual, arrExpected) {
+  //If lengths are different they're not the same array, same as if either isn't an array.
   let bool = false;
+  if (!Array.isArray(arrActual) || !Array.isArray(arrExpected)) {
+    return bool;
+  }
   if (arrActual.length !== arrExpected.length) {
     return bool;
   }
