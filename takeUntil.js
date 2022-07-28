@@ -8,9 +8,7 @@ const assertArraysEqual = function(actual, expected) {
     console.log(`Assertion Passed: ✔️✔️✔️ [${actual}] === [${expected}]✔️`);
   }
 };
-// This cannot check nested arrays or objects, returns boolean of whether 2 arrays are equal.
 const eqArrays = function(arrActual, arrExpected) {
-  //If lengths are different they're not the same array.
   let bool = false;
   if (!Array.isArray(arrActual) || !Array.isArray(arrExpected)) {
     return bool;
@@ -18,18 +16,16 @@ const eqArrays = function(arrActual, arrExpected) {
   if (arrActual.length !== arrExpected.length) {
     return bool;
   }
-  //If any types or values are different they're different arrays.
   for (let i = 0; i < arrActual.length; i++) {
     if (arrActual[i] !== arrExpected[i]) {
       bool = false;
       return bool;
     }
   }
-  //If neither of these checks flagged then they are the same array.
   bool = true;
   return bool;
 };
-
+// Actual function.
 const takeUntil = function(array, callback) {
   let newArray = [];
   for (let element of array) {
