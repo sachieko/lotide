@@ -20,6 +20,13 @@ const eqArrays = function(arrActual, arrExpected) {
   bool = true;
   return bool;
 };
+const assertEqual = function(actual, expected) {
+  console.assert(expected === actual, `🔥🔥🔥 ${actual} !== ${expected}`);
+  if (actual === expected) {
+    
+    console.log(`Assertion Passed: ✔️✔️✔️ ${actual} === ${expected}`);
+  }
+};
 // compares Objects and returns truthy value
 const eqObjects = function(object1, object2) {
   let bool = false;
@@ -54,64 +61,31 @@ const eqObjects = function(object1, object2) {
   return bool;
 };
 
-const assertObjectsEqual = function(actual, expected) {
-  const inspect = require('util').inspect;
-  let bool = eqObjects(actual, expected) === true;
-  console.assert(bool === true, `🔥🔥🔥 [${inspect(actual)}] !== [${inspect(expected)}]🔥`);
-  if (bool) {
-    console.log(`Assertion Passed: ✔️✔️✔️ [${inspect(actual)}] === [${inspect(expected)}]✔️`);
+
+// ACTUAL FUNCTION findKey here
+const findKey = function(object, callback) {
+  for (let key in object) {
+    if (callback(key)) {
+      return key;
+    }
   }
+  return undefined;
 };
 
-const testObj1 = {
+const favorites = {
   Metal: ["Nothing More", "STARSET", "Savage Hands", "Motionless in White"],
   Anime: ["Psycho-pass"],
   Food: ["Hotpot", "Ramen", "Sushi", "Wonton soup", "Pho", "Chips"],
   Person: "Tyler"
 };
 
-const testObj2 = {
-  Metal: ["Nothing More", "STARSET", "Savage Hands", "Motionless in White"],
-  Anime: ["Psycho-pass"],
-  Food: ["Hotpot", "Ramen", "Sushi", "Wonton soup", "Pho", "Chips"],
-  Person: "Tyler"
+const objOfObj = {
+  favorite: favorites
 };
 
-const testObj3 = {
-  Metal: ["Nothing More", "STARSET", "Savage Hands", "Motionless in White"],
-  Anime: ["Psycho-pass"],
-  Food: ["Hotpot", "Ramen", "Sushi", "Wonton soup", "Pho", "Chips"],
-  Person: "Neil"
-};
-
-const testObj4 = {
-  Metal: ["Nothing More", "STARSET", "Savage Hands", "Motionless in White"],
-  Anime: ["Psycho-pass"],
-  Food: {
-    Soup: ["Ramen", "Pho", "Hotpot", "Wonton soup"],
-    RiceDish: ["Sushi"]
-  }
-};
-
-const testObj5 = {
-  Metal: ["Nothing More", "STARSET", "Savage Hands", "Motionless in White"],
-  Anime: ["Psycho-pass"],
-  Food: {
-    Soup: ["Ramen", "Pho", "Hotpot", "Wonton soup"],
-    RiceDish: ["Sushi"]
-  }
-};
-
-const testObj6 = {
-  Metal: ["Nothing More", "STARSET", "Savage Hands", "Motionless in White"],
-  Anime: ["Psycho-pass"],
-  Food: {
-    Soup: ["Ramen", "Pho", "Wonton soup"],
-    RiceDish: ["Sushi"]
-  }
-};
-
-assertObjectsEqual(testObj1, testObj2); // ==> Pass
-assertObjectsEqual(testObj1, testObj3); // ==> Fail
-assertObjectsEqual(testObj4, testObj5); // ==> Pass
-assertObjectsEqual(testObj4, testObj6); // ==> Fail
+let test1 = findKey(favorites, x => x === "Metal");
+assertEqual(test1, "Metal");
+let test2 = findKey(favorites, x => eqArrays(favorites[x], ['Psycho-pass']));
+assertEqual(test2, 'Anime');
+let test3 = findKey(objOfObj, x => eqObjects(objOfObj[x], favorites));
+assertEqual(test3, 'favorite');
