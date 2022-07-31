@@ -8,25 +8,19 @@ const assertEqual = function(actual, expected) {
 };
 // We need eqArrays so findKeyByValue can work if the value of a key in the object is an array
 // We will need to do something similar if the key is an object.
-// This cannot check nested arrays or objects, returns boolean of whether 2 arrays are equal.
+// returns boolean of whether 2 arrays are equal, cannot check objects
 const eqArrays = function(arrActual, arrExpected) {
-  //If lengths are different they're not the same array.
-  let bool = false;
-  if (!Array.isArray(arrActual) || !Array.isArray(arrExpected)) {
-    return bool;
-  }
+  //If lengths are different they're not the same array, same as if either isn't an array.
   if (arrActual.length !== arrExpected.length) {
-    return bool;
+    return false;
   }
+  let bool = true;
   //If any types or values are different they're different arrays.
   for (let i = 0; i < arrActual.length; i++) {
-    if (arrActual[i] !== arrExpected[i]) {
-      bool = false;
-      return bool;
-    }
+    Array.isArray(arrActual[i]) ? bool = eqArrays(arrActual[i], arrExpected[i]) : bool = arrActual[i] === arrExpected[i];
+    bool === false ? false : null;
   }
   //If neither of these checks flagged then they are the same array.
-  bool = true;
   return bool;
 };
 
