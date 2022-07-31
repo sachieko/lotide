@@ -63,20 +63,6 @@ const eqObjects = function(object1, object2) {
 
 // TEST CODE BELOW HERE --- Do not modify it's huge!
 
-const ab = { a: "1", b: "2" };
-const ba = { b: "2", a: "1" };
-const abc = { a: "1", b: "2", c: "3" };
-const test = [eqObjects(ab, ba), eqObjects(ab, abc)]; // ==> [true, false]
-assertEqual(test[0], true); // Pass
-assertEqual(test[1], false); // Pass
-
-const cd = { c: "1", d: ["2", 3] };
-const dc = { d: ["2", 3], c: "1" };
-const cd2 = { c: "1", d: ["2", 3, 4] };
-const test0 = [eqObjects(cd, dc), eqObjects(cd, cd2)]; // => [true, false]
-assertEqual(test0[0], true); // Both should pass tests now.
-assertEqual(test0[1], false); //
-
 const testObj1 = {
   Metal: ["Nothing More", "STARSET", "Savage Hands", "Motionless in White"],
   Anime: ["Psycho-pass"],
@@ -124,12 +110,22 @@ const testObj6 = {
     RiceDish: ["Sushi"]
   }
 };
+console.log('- - - - - Test 1 - - - - -');
+assertEqual(eqObjects({ a: { z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 }), true); // => true
+console.log('- - - - - Test 2 - - - - -');
+assertEqual(eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 }), false); // => false
+console.log('- - - - - Test 3 - - - - -');
+assertEqual(eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: 1, b: 2 }), false); // => False
 
+console.log('- - - - - Test 4 - - - - -');
 const test1 = eqObjects(testObj1, testObj2);
 assertEqual(test1, true); // => pass
+console.log('- - - - - Test 5 - - - - -');
 const test2 = eqObjects(testObj1, testObj3);
 assertEqual(test2, false); // => pass
+console.log('- - - - - Test 6 - - - - -');
 const test3 = eqObjects(testObj5, testObj4);
 assertEqual(test3, true); // => pass
+console.log('- - - - - Test 7 - - - - -');
 const test4 = eqObjects(testObj5, testObj6);
 assertEqual(test4, false); // => pass
