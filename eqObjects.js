@@ -8,7 +8,6 @@ const assertEqual = function(actual, expected) {
 };
 // This cannot check nested arrays or objects, returns boolean of whether 2 arrays are equal.
 const eqArrays = function(arrActual, arrExpected) {
-  //If lengths are different they're not the same array, same as if either isn't an array.
   let bool = false;
   if (!Array.isArray(arrActual) || !Array.isArray(arrExpected)) {
     return bool;
@@ -16,14 +15,12 @@ const eqArrays = function(arrActual, arrExpected) {
   if (arrActual.length !== arrExpected.length) {
     return bool;
   }
-  //If any types or values are different they're different arrays.
   for (let i = 0; i < arrActual.length; i++) {
     if (arrActual[i] !== arrExpected[i]) {
       bool = false;
       return bool;
     }
   }
-  //If neither of these checks flagged then they are the same array.
   bool = true;
   return bool;
 };
@@ -35,10 +32,9 @@ const eqObjects = function(object1, object2) {
   }
   for (const key in object1) {
     // We need some booleans so we don't compare an array or object as if they're primitives!
-    let arrayBool = Array.isArray(object2[key]);
+    let arrayBool = Array.isArray(object2[key]) && Array.isArray(object1[key]);
     let objBool = typeof object2[key] === "object" && typeof object1[key] === "object";
     // If value for key is an array, Array.isArray() will flag it first. If typeof value returns object after this, it will be an object since it wasn't an array.
-    // If it's an array it will be compared here and if any arrays aren't equal it will return the false bool.
     if (arrayBool) {
       if (!eqArrays(object1[key], object2[key])) {
         return bool;
