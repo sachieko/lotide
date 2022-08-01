@@ -1,4 +1,4 @@
-const head = require('../head.js');
+const head = require('../head');
 const assertEqual = require('../assertEqual');
 
 assertEqual(head([5]), 5); // => pass
