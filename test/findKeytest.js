@@ -16,13 +16,13 @@ const test1 = findKey(favorites, x => x === "Metal");
 const test2 = findKey(favorites, x => eqArrays(favorites[x], ['Psycho-pass']));
 const test3 = findKey(objOfObj, x => eqObjects(objOfObj[x], favorites));
 describe("#findKey function tests", () => {
-  it(`should return a key that matches the input of "${test1}"`, () => {
+  it(`should return a key that matches the input of "${test1}" by matching name of key`, () => {
     assert.strictEqual(test1, "Metal");
   });
-  it(`should return a key that matches the input of "${test2}"`, () => {
+  it(`should return a key that matches the input of "${test2}" by using a value`, () => {
     assert.strictEqual(test2, "Anime");
   });
-  it(`should return a key that matches the input of "${test3} for an object of objects"`, () => {
+  it(`should return a key that matches the input of "${test3} for an object of objects" by using an object as a value`, () => {
     assert.strictEqual(test3, "favorite");
   });
 });
