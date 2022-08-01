@@ -1,26 +1,5 @@
-// Debugging with console.assert function
-const assertEqual = function(actual, expected) {
-  console.assert(expected === actual, `🔥🔥🔥 ${actual} !== ${expected} 🔥`);
-  if (actual === expected) {
-    
-    console.log(`Assertion Passed: ✔️✔️✔️ ${actual} === ${expected} ✔️`);
-  }
-};
-// returns boolean of whether 2 arrays are equal, cannot check objects
-const eqArrays = function(arrActual, arrExpected) {
-  //If lengths are different they're not the same array, same as if either isn't an array.
-  if (arrActual.length !== arrExpected.length) {
-    return false;
-  }
-  let bool = true;
-  //If any types or values are different they're different arrays.
-  for (let i = 0; i < arrActual.length; i++) {
-    Array.isArray(arrActual[i]) ? bool = eqArrays(arrActual[i], arrExpected[i]) : bool = arrActual[i] === arrExpected[i];
-    bool === false ? false : null;
-  }
-  //If neither of these checks flagged then they are the same array.
-  return bool;
-};
+const eqArrays = require('./eqArrays');
+
 // ACTUAL FUNCTION
 const eqObjects = function(object1, object2) {
   let bool = false;
@@ -53,72 +32,4 @@ const eqObjects = function(object1, object2) {
   bool = true;
   return bool;
 };
-
-// TEST CODE BELOW HERE --- Do not modify it's huge!
-
-const testObj1 = {
-  Metal: ["Nothing More", "STARSET", "Savage Hands", "Motionless in White"],
-  Anime: ["Psycho-pass"],
-  Food: ["Hotpot", "Ramen", "Sushi", "Wonton soup", "Pho", "Chips"],
-  Person: "Tyler"
-};
-
-const testObj2 = {
-  Metal: ["Nothing More", "STARSET", "Savage Hands", "Motionless in White"],
-  Anime: ["Psycho-pass"],
-  Food: ["Hotpot", "Ramen", "Sushi", "Wonton soup", "Pho", "Chips"],
-  Person: "Tyler"
-};
-
-const testObj3 = {
-  Metal: ["Nothing More", "STARSET", "Savage Hands", "Motionless in White"],
-  Anime: ["Psycho-pass"],
-  Food: ["Hotpot", "Ramen", "Sushi", "Wonton soup", "Pho", "Chips"],
-  Person: "Neil"
-};
-
-const testObj4 = {
-  Metal: ["Nothing More", "STARSET", "Savage Hands", "Motionless in White"],
-  Anime: ["Psycho-pass"],
-  Food: {
-    Soup: ["Ramen", "Pho", "Hotpot", "Wonton soup"],
-    RiceDish: ["Sushi"]
-  }
-};
-
-const testObj5 = {
-  Metal: ["Nothing More", "STARSET", "Savage Hands", "Motionless in White"],
-  Anime: ["Psycho-pass"],
-  Food: {
-    Soup: ["Ramen", "Pho", "Hotpot", "Wonton soup"],
-    RiceDish: ["Sushi"]
-  }
-};
-
-const testObj6 = {
-  Metal: ["Nothing More", "STARSET", "Savage Hands", "Motionless in White"],
-  Anime: ["Psycho-pass"],
-  Food: {
-    Soup: ["Ramen", "Pho", "Wonton soup"],
-    RiceDish: ["Sushi"]
-  }
-};
-console.log('- - - - - Test 1 - - - - -');
-assertEqual(eqObjects({ a: { z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 }), true); // => true
-console.log('- - - - - Test 2 - - - - -');
-assertEqual(eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: { z: 1 }, b: 2 }), false); // => false
-console.log('- - - - - Test 3 - - - - -');
-assertEqual(eqObjects({ a: { y: 0, z: 1 }, b: 2 }, { a: 1, b: 2 }), false); // => False
-
-console.log('- - - - - Test 4 - - - - -');
-const test1 = eqObjects(testObj1, testObj2);
-assertEqual(test1, true); // => pass
-console.log('- - - - - Test 5 - - - - -');
-const test2 = eqObjects(testObj1, testObj3);
-assertEqual(test2, false); // => pass
-console.log('- - - - - Test 6 - - - - -');
-const test3 = eqObjects(testObj5, testObj4);
-assertEqual(test3, true); // => pass
-console.log('- - - - - Test 7 - - - - -');
-const test4 = eqObjects(testObj5, testObj6);
-assertEqual(test4, false); // => pass
+module.exports = eqObjects;
