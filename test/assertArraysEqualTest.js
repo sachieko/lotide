@@ -1,3 +1,4 @@
+//Outdated due to Mocha chai testing
 const assertArraysEqual = require('../assertArraysEqual.js');
 
 assertArraysEqual([1, 2, 3], [1, 2, 3]); // => pass
