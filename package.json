@@ -1,6 +1,6 @@
 {
   "name": "@sachieko/lotide",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Simple version or miniclone of the Lodash library called lotide for learning purposes, not production-grade software.",
   "main": "index.js",
   "scripts": {
