@@ -6,13 +6,6 @@ const reverseString = function(str) {
   }
   return revStr;
 };
-const tail = function(arr,i) {
-  let arr2 = arr.slice(i);  return arr2;
-};
-const reverseArg = function(arr) {
-  for (let i = 0; i < arr.length; i++) {
-    console.log(reverseString(arr[i]));
-  }
-};
-reverseArg(tail(process.argv,2));
+module.exports = reverseString;
+
 
