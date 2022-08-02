@@ -1,6 +1,6 @@
 const eqArrays = require('./eqArrays');
 
-// ACTUAL FUNCTION
+// function eqObjects will take in two objects and compare keys and values and return a boolean value.
 const eqObjects = function(object1, object2) {
   let bool = false;
   if (Object.keys(object1).length !== Object.keys(object2).length) {

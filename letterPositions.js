@@ -1,3 +1,4 @@
+// Returns an object of letter: array key:value pairs where value is an array of a letter's indices in the input string
 const letterPositions = function(string) {
   const resultObj = {};
   for (let i = 0; i < string.length; i++) {

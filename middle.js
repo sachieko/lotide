@@ -1,4 +1,4 @@
-// ACTUAL FUNCTION here ugh. It takes in an array, and it MUST be an array haha, and then outputs the middle element(s) of the array. Does not mutate.
+// It takes in an array, it MUST be an array haha, and then outputs the middle element(s) of the array. Does not mutate.
 const middle = function(array) {
 // Arrays with one or two elements should return an empty array
   if (array.length <= 2) {

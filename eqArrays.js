@@ -1,3 +1,4 @@
+//function eqArrays will compare two arrays to determine if they're equal.
 const eqArrays = function(arrActual, arrExpected) {
   //If lengths are different they're not the same array, same as if either isn't an array.
   if (arrActual.length !== arrExpected.length) {

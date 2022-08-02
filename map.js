@@ -1,4 +1,4 @@
-// map function
+// map function performs a function on an array.
 const map = (array, callback) => {
   const results = [];
   for (let item of array) {

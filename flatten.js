@@ -1,4 +1,4 @@
-//Flatten function takes an array and returns a flattened version of the array.
+//Flatten function takes an array and returns a flattened version of the array. Will flatten COMPLETELY!
 'use strict';
 const flatten = arr => {
   let flatArray = [],
