@@ -1,3 +1,4 @@
+//countLetters will return an object with Letter: Freq key:value pairs on a string.
 const countLetters = function(string) {
   // Use string.toUpperCase() in the loop to count letters regardless of case
   const resultObj = {};
