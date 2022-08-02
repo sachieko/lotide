@@ -2,7 +2,7 @@
   "name": "@sachieko/lotide",
   "version": "1.0.2",
   "description": "Simple version or miniclone of the Lodash library called lotide for learning purposes, not production-grade software.",
-  "main": "README.md",
+  "main": "index.js",
   "scripts": {
     "test": "mocha"
   },
