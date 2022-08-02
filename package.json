@@ -1,0 +1,30 @@
+{
+  "name": "@sachieko/lotide",
+  "version": "1.0.0",
+  "description": "Simple version or miniclone of the Lodash library called lotide for learning purposes, not production-grade software.",
+  "main": "README.md",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sachieko/lotide.git"
+  },
+  "keywords": [
+    "lotide",
+    "lighthouse"
+  ],
+  "author": "sachieko <arashikabane@gmail.com> (https://github.com/sachieko/)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sachieko/lotide/issues"
+  },
+  "homepage": "https://github.com/sachieko/lotide#readme",
+  "directories": {
+    "test": "test"
+  },
+  "devDependencies": {
+    "chai": "^4.3.6",
+    "mocha": "^9.2.2"
+  }
+}
